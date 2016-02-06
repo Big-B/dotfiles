@@ -1,18 +1,28 @@
 #!/bin/bash
 
 # Files in ~/
-HOME_FILES=.bash_aliases .bash_profile .bashrc .gitconfig .speedmap \
-    .toprc .vim .vimrc .xinitrc .Xresources .zsh_aliases .zshrc
+HOME_FILES=".bash_aliases
+    .bash_profile
+    .bashrc
+    .gitconfig
+    .speedmap
+    .toprc
+    .vim
+    .vimrc
+    .xinitrc
+    .Xresources
+    .zsh_aliases
+    .zshrc"
 
 # Files in ~/.config
-CONFIG_FILES=awesome
+CONFIG_FILES="awesome"
 
 # All of these guys go in homedir
 for link in $HOME_FILES; do
-    ln -sf $link $HOME/$link
+    ln -sf $PWD/$link $HOME/$link
 done
 
 # All of these guys go in the config dir
 for link in $CONFIG_FILES; do
-    ln -sf $link $HOME/.config/$link
+    ln -sf $PWD/$link $HOME/.config/$link
 done
