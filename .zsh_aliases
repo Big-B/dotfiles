@@ -1,0 +1,9 @@
+# Aliases file
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+alias bc="bc -l" # Use decimals
+alias egrep="egrep --color"
+# No correct
+alias git="nocorrect git"
+
+alias c="clear"

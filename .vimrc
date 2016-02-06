@@ -1,0 +1,111 @@
+" Remove any trailing whitespace that is in the file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
+autocmd BufNewFile,BufRead *.c set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
+autocmd BufNewFile,BufRead *.py set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
+autocmd BufNewFile,BufRead *.java set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
+
+" Necessary for some vim stuff
+set nocompatible
+
+" This shows what you are typing as a command
+set showcmd
+
+" Needed for syntax highlighting
+filetype on
+filetype plugin on
+syntax enable
+set grepprg=grep\ -nH\ $*
+
+" Latex
+let g:tex_flavor = "latex"
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+
+" Autoindent
+set autoindent
+
+" Hid buffers when they are abandoned
+set hidden
+
+" Spaces instead of tab char
+set expandtab
+set smarttab
+
+" Set tab length
+set shiftwidth=4
+set softtabstop=4
+
+" Set english for spellcheck, but default to off
+if version >= 700
+    set spl=en spell
+    set nospell
+endif
+
+" Tab completion stuff
+set wildmenu
+set wildmode=list:longest,full
+
+" Enable mouse support in console
+set mouse=a
+
+" Make backspace work like other apps
+set backspace=2
+
+" Line numbers
+set number
+
+" Ignoring cases
+set ignorecase
+
+" Smartcase
+set smartcase
+
+" jj exits insert mode
+inoremap jj <Esc>
+
+" Incremental search
+set incsearch
+
+" Highlight searches
+set hlsearch
+
+" Highlight other parenthesis
+highlight MatchParen ctermbg=4
+
+" Personal favorite colorscheme
+syntax enable
+set background=dark
+colorscheme solarized
+
+filetype plugin indent on
+syntax on
+
+" Show matching braces
+set showmatch
+
+" Keep 5 lines on sides and top and bottom when off screen
+set scrolloff=5
+set sidescrolloff=5
+
+" 1000 undos
+set undolevels=1000
+
+let $PAGER=''
+
+" Search for tags recursively up
+set tags=tags;/
+
+" Function to look for cscope.out in parent directories
+function! LoadCscope()
+    let db = findfile("cscope.out", ".;")
+    if (!empty(db))
+        let path = strpart(db, 0, match(db, "/cscope.out$"))
+        set nocscopeverbose " supress 'duplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+" Git
+autocmd FileType gitcommit setlocal spell tw=72

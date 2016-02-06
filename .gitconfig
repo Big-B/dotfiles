@@ -1,0 +1,16 @@
+[user]
+	name = Brandon Mittman
+	email = Brandon.D.Mittman@raytheon.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit --date=relative --all --decorate --color
+[push]
+	default = simple
