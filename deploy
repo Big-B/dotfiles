@@ -1,7 +1,9 @@
 #!/bin/bash
 
+readonly CONFIG_DIR=$HOME/.config/
+
 # Files in ~/
-HOME_FILES=".bash_aliases
+readonly HOME_FILES=".bash_aliases
     .bash_profile
     .bashrc
     .gitconfig
@@ -15,7 +17,10 @@ HOME_FILES=".bash_aliases
     .zshrc"
 
 # Files in ~/.config
-CONFIG_FILES="awesome"
+readonly CONFIG_FILES="awesome"
+
+# Make sure the config directory exists
+mkdir -p $CONFIG_DIR
 
 # All of these guys go in homedir
 for link in $HOME_FILES; do
@@ -24,5 +29,5 @@ done
 
 # All of these guys go in the config dir
 for link in $CONFIG_FILES; do
-    ln -sf $PWD/$link $HOME/.config/$link
+    ln -sf $PWD/$link $HOME/$CONFIG_DIR/$link
 done
