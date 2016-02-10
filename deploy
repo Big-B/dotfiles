@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly CONFIG_DIR=$HOME/.config/
+readonly CONFIG_DIR=/.config/
 
 # Files in ~/
 readonly HOME_FILES=".bash_aliases
@@ -20,7 +20,7 @@ readonly HOME_FILES=".bash_aliases
 readonly CONFIG_FILES="awesome"
 
 # Make sure the config directory exists
-mkdir -p $CONFIG_DIR
+mkdir -p $HOME/$CONFIG_DIR
 
 # All of these guys go in homedir
 for link in $HOME_FILES; do
