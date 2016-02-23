@@ -27,4 +27,6 @@ numlockx &
 dropboxd &
 sh /home/mittmanb/.dpbx &
 
+xautolock -time 10 locker slock
+
 exec awesome
