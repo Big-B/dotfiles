@@ -7,3 +7,5 @@ alias egrep="egrep --color"
 alias git="nocorrect git"
 
 alias c="clear"
+
+alias psall="ps -eLo pid,tid,psr,rtprio,policy,pri,state,%cpu,cputime,user,stat,wchan:20,comm:32"
