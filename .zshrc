@@ -103,3 +103,6 @@ fi
 
 # Stupid oh-my-zsh aliases
 unalias rm cp mv &> /dev/null || true
+
+# Key binding for reverse history search
+bindkey '^R' history-incremental-search-backward
