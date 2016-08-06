@@ -5,7 +5,9 @@ alias bc="bc -l" # Use decimals
 alias egrep="egrep --color"
 # No correct
 alias git="nocorrect git"
+alias cargo="nocorrect cargo"
 
 alias c="clear"
 
 alias psall="ps -eLo pid,tid,psr,rtprio,policy,pri,state,%cpu,cputime,user,stat,wchan:20,comm:32"
+alias reflector="sudo reflector --verbose --sort rate --threads `nproc` --save /etc/pacman.d/mirrorlist"
