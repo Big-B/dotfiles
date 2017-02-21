@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -x
 
-readonly CONFIG_DIR=/.config/
+readonly CONFIG_DIR=.config
 
 # Files in ~/
 readonly HOME_FILES=".bash_aliases
@@ -31,3 +31,10 @@ done
 for link in $CONFIG_FILES; do
     ln -sf $PWD/$link $HOME/$CONFIG_DIR/$link
 done
+
+# Check for nvim and deploy vim files
+if which nvim &> /dev/null ; then
+    readonly NVIM_DIR=$HOME/$CONFIG_DIR/nvim
+    ln -sf $HOME/.vim $NVIM_DIR
+    ln -sf $HOME/.vimrc $NVIM_DIR/init.vim
+fi
