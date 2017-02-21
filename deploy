@@ -25,17 +25,27 @@ mkdir -p $HOME/$CONFIG_DIR
 
 # All of these guys go in homedir
 for link in $HOME_FILES; do
-    ln -sf $PWD/$link $HOME/$link
+    ln -sf $PWD/$link $HOME/
 done
 
 # All of these guys go in the config dir
 for link in $CONFIG_FILES; do
-    ln -sf $PWD/$link $HOME/$CONFIG_DIR/$link
+    ln -sf $PWD/$link $HOME/$CONFIG_DIR/
 done
 
 # Check for nvim and deploy vim files
 if which nvim &> /dev/null ; then
     readonly NVIM_DIR=$HOME/$CONFIG_DIR/nvim
+
+    # Check to see if this already exists
+    # perhaps from running this script previously.
+    # Try to remove it if it does, non-recursively
+    if [ -d "$NVIM_DIR" ];
+    then
+        rm $NVIM_DIR
+    fi
+
+    # Link
     ln -sf $HOME/.vim $NVIM_DIR
     ln -sf $HOME/.vimrc $NVIM_DIR/init.vim
 fi
