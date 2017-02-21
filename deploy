@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 readonly CONFIG_DIR=.config
 
@@ -17,7 +17,8 @@ readonly HOME_FILES=".bash_aliases
     .zshrc"
 
 # Files in ~/.config
-readonly CONFIG_FILES="awesome"
+readonly CONFIG_FILES="awesome
+    i3"
 
 # Make sure the config directory exists
 mkdir -p $HOME/$CONFIG_DIR
