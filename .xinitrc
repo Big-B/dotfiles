@@ -29,4 +29,6 @@ sh /home/mittmanb/.dpbx &
 
 xautolock -time 10 locker slock
 
-exec awesome
+feh --bg-scale /home/mittmanb/sync/sync/desktop/blue_snake.jpg
+
+exec i3 &> ~/.i3.log
