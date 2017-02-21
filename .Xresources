@@ -77,3 +77,4 @@
 *color15:               S_base3
 
 URxvt.scrollBar: false
+*.font: xft:DejaVu Sans Mono:pixelsize=12
