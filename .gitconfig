@@ -14,3 +14,10 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit --date=relative --all --decorate --color
 [push]
 	default = simple
+[grep]
+        extendRegexp = true
+	lineNumber = true
+[rerere]
+        enabled = true
+[rebase]
+        autosquash = true
