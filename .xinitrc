@@ -27,8 +27,14 @@ numlockx &
 dropboxd &
 sh /home/mittmanb/.dpbx &
 
-xautolock -time 10 locker slock
+# Get rid of beep
+xset -b
 
-feh --bg-scale /home/mittmanb/sync/sync/desktop/blue_snake.jpg
+# Set i3lock as locker utility with 10 minute limit
+xautolock -time 10 -locker "/usr/bin/i3lock -c 000000" &
 
+# Set background
+feh --bg-scale /home/mittmanb/syncthing/sync/desktop/blue_snake.jpg
+
+# Start i3
 exec i3 &> ~/.i3.log
