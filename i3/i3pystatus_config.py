@@ -18,7 +18,7 @@ status.register("network",
 
 
 status.register("network",
-	interface="wlp4s0",
+	interface="wlp2s0",
 	format_up="{essid} {quality:3.0f}% ({v4cidr})",
 	format_down="WLAN aus",
 	color_up="#FFFFFF",
