@@ -30,9 +30,6 @@ sh /home/mittmanb/.dpbx &
 # Get rid of beep
 xset -b
 
-# Set i3lock as locker utility with 10 minute limit
-xautolock -time 10 -locker "/usr/bin/i3lock -c 000000" &
-
 # Set background
 feh --bg-scale /home/mittmanb/syncthing/sync/desktop/blue_snake.jpg
 
