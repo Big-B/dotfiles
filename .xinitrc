@@ -23,10 +23,6 @@ fi
 # Turn on numlock
 numlockx &
 
-# Start Dropbox
-dropboxd &
-sh /home/mittmanb/.dpbx &
-
 # Get rid of beep
 xset -b
 
