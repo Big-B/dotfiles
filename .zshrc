@@ -60,7 +60,7 @@ export EDITOR='vim'
 export MAKEFLAGS="-j`nproc`"
 
 # Compile flags
-export CFLAGS="-march=native -O2 -pipe -fstack-protector-strong"
+export CFLAGS="-march=native -pipe -fstack-protector-strong"
 export CXXFLAGS="${CFLAGS}"
 
 # Preferred editor for local and remote sessions
