@@ -27,13 +27,13 @@ status.register("network",
 
 
 status.register("pulseaudio",
-	format="{volume}",
+        format="VOL: {volume}%",
 	format_muted="{volume}",
 )
 
 
 status.register("battery",
-	format="{status} {percentage:.0f}",
+        format="BAT: {status}{percentage:.0f}%",
 	full_color="#FFFFFF",
 	color="#FFFFFF",
 	charging_color="#FFFFFF",
