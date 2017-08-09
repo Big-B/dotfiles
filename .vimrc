@@ -109,3 +109,6 @@ au BufEnter /* call LoadCscope()
 
 " Git
 autocmd FileType gitcommit setlocal spell tw=72
+
+" Omni completion
+set omnifunc=syntaxcomplete#Complete
