@@ -12,7 +12,7 @@ set nocompatible
 set showcmd
 
 " Needed for syntax highlighting
-filetype on
+filetype off
 filetype plugin on
 syntax enable
 set grepprg=grep\ -nH\ $*
@@ -79,8 +79,17 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-filetype plugin indent on
-syntax on
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins
+Plugin 'vimwiki/vimwiki'
+Plugin 'lervag/vimtex'
+
+" let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()
 
 " Show matching braces
 set showmatch
@@ -114,3 +123,6 @@ autocmd FileType gitcommit setlocal spell tw=72
 
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
+
+filetype plugin indent on
+syntax enable
