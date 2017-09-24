@@ -52,4 +52,9 @@ alias bc="bc -l"
 
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 &'
 
+# Look for neovim
+if [ -x "$(command -v nvim)" ]; then
+    alias vim='nvim'
+fi
+
 set -o vi

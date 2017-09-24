@@ -36,9 +36,11 @@ set shiftwidth=4
 set softtabstop=4
 
 " Set english for spellcheck, but default to off
-if version >= 700
-    set spl=en spell
-    set nospell
+if !has('nvim')
+    if version >= 700
+        set spl=en spell
+        set nospell
+    endif
 endif
 
 " Tab completion stuff
