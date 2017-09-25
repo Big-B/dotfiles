@@ -19,7 +19,7 @@ set grepprg=grep\ -nH\ $*
 
 " Latex
 let g:tex_flavor = "latex"
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " Autoindent
 set autoindent
@@ -120,6 +120,9 @@ au BufEnter /* call LoadCscope()
 
 " Git
 autocmd FileType gitcommit setlocal spell tw=72
+
+" Latex
+autocmd FileType tex setlocal spell tw=72
 
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
