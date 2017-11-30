@@ -118,6 +118,24 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
+" Diff Mode
+if &diff
+    " Diff options
+    set diffopt+=iwhite
+    set diffexpr=DiffW()
+    function DiffW()
+        let opt = ""
+        if &diffopt =~ "icase"
+            let opt = opt . " -i "
+        endif
+        if &diffopt =~ "iwhite"
+            let opt = opt . " -wbB "
+        endif
+        call system("diff -a -d --binary " . opt .
+            \ v:fname_in . " " . v:fname_new . " > " . v:fname_out)
+    endfunction
+endif
+
 " Git
 autocmd FileType gitcommit setlocal spell tw=72
 
