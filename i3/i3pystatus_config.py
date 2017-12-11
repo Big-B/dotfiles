@@ -28,7 +28,7 @@ status.register("network",
 
 status.register("pulseaudio",
         format="VOL: {volume}%",
-	format_muted="{volume}",
+        format_muted="VOL: {volume}%",
 )
 
 
