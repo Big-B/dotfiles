@@ -79,17 +79,25 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('nvim')
+    " Vim-Plug
+    call plug#begin('~/.vim/plugged')
+    Plug 'vimwiki/vimwiki'
+    Plug 'lervag/vimtex'
+    call plug#end()
+else
+    " Vundle
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
-" Plugins
-Plugin 'vimwiki/vimwiki'
-Plugin 'lervag/vimtex'
+    " Plugins
+    Plugin 'vimwiki/vimwiki'
+    Plugin 'lervag/vimtex'
 
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-call vundle#end()
+    " let Vundle manage Vundle
+    Plugin 'VundleVim/Vundle.vim'
+    call vundle#end()
+endif
 
 " Show matching braces
 set showmatch
