@@ -19,7 +19,6 @@ set grepprg=grep\ -nH\ $*
 
 " Latex
 let g:tex_flavor = "latex"
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " Autoindent
 set autoindent
