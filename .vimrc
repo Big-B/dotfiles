@@ -86,6 +86,9 @@ if has('nvim')
     Plug 'vimwiki/vimwiki'
     Plug 'lervag/vimtex'
 
+    " Language Packs
+    Plug 'sheerun/vim-polyglot'
+
     " Completion
     Plug 'roxma/nvim-completion-manager'
     Plug 'roxma/ncm-clang'
@@ -103,6 +106,9 @@ else
     " Plugins
     Plugin 'vimwiki/vimwiki'
     Plugin 'lervag/vimtex'
+
+    " Language Packs
+    Plugin 'sheerun/vim-polyglot'
 
     " let Vundle manage Vundle
     Plugin 'VundleVim/Vundle.vim'
