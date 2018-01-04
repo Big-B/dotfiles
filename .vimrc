@@ -82,8 +82,18 @@ colorscheme solarized
 if has('nvim')
     " Vim-Plug
     call plug#begin('~/.vim/plugged')
+
     Plug 'vimwiki/vimwiki'
     Plug 'lervag/vimtex'
+
+    " Completion
+    Plug 'roxma/nvim-completion-manager'
+    Plug 'roxma/ncm-clang'
+    Plug 'roxma/nvim-cm-racer'
+
+    " Rust
+    Plug 'rust-lang/rust.vim'
+    Plug 'racer-rust/vim-racer'
     call plug#end()
 else
     " Vundle
