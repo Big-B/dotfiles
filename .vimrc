@@ -82,7 +82,7 @@ if has('nvim')
     " Vim-Plug
     call plug#begin('~/.vim/plugged')
 
-    Plug 'vimwiki/vimwiki'
+    Plug 'vim-scripts/vimwiki'
     Plug 'lervag/vimtex'
 
     " Language Packs
@@ -96,7 +96,21 @@ if has('nvim')
     " Rust
     Plug 'rust-lang/rust.vim'
     Plug 'racer-rust/vim-racer'
+    Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
     call plug#end()
+
+    let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ }
+
+    nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+    nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+    nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 else
     " Vundle
     set rtp+=~/.vim/bundle/Vundle.vim
