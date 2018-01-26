@@ -102,10 +102,10 @@ if has('nvim')
     \ }
     call plug#end()
 
+    let g:racer_experimental_completer = 1
+
     let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }
 
     nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
