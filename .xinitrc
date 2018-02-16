@@ -29,7 +29,7 @@ feh --bg-scale /home/mittmanb/syncthing/sync/desktop/blue_snake.jpg
 /usr/bin/xautolock -detectsleep -time 5 -locker "/usr/bin/i3lock-fancy -p -t '' -- /usr/bin/scrot" &
 
 # Turn computer off after 10 minutes
-/usr/bin/xautolock -time 10 -locker "systemctl poweroff" &
+/usr/bin/xautolock -time 30 -locker "systemctl poweroff" &
 
 # Start i3
 exec i3 &> ~/.i3.log
