@@ -2,6 +2,9 @@
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 
+# Preserve user environment
+alias sudo="sudo -E"
+
 # No correct
 alias git="nocorrect git"
 alias cargo="nocorrect cargo"
