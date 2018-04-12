@@ -60,4 +60,7 @@ if [ -x "$(command -v nvim)" ]; then
     alias vim='nvim'
 fi
 
+# Use info with vi bindings
+alias info="info --vi-keys"
+
 set -o vi

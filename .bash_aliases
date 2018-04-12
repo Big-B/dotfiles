@@ -1,5 +1,12 @@
 # (R) = requires argument
+# No correct
+alias git="nocorrect git"
+alias cargo="nocorrect cargo"
 
+# Update mirrorlist sorted by rate
+alias reflector="sudo reflector --verbose --sort rate --threads `nproc` --save /etc/pacman.d/mirrorlist"
+
+# ssh to lectura
 alias lectura="ssh mittmanb@lectura.cs.arizona.edu"
 
 # List commands
@@ -21,20 +28,18 @@ alias da='date "+%A, %B %d, %Y [%T]"' # Prints out nicely formattted date
 alias dul='du --max-depth=1' # Estimated disk usage of depth=1
 alias hist='history | grep' # (R) Search history
 alias openports='ss --all --numeric --processess --ipv4 --ipv6' # Lists open ports and processess using them
-alias top='"xterm" -fn 6x13 -geometry 100x50 -bg black -fg green -j -ls -sb -sf -sl 500 -vb -T `hostname` -e top &'
 alias psall='ps -eLo pid,tid,psr,rtprio,policy,pri,state,%cpu,cputime,user,stat,wchan:20,comm:32'
 alias psi='ps -eLo pid,tid,psr,rtprio,policy,pri,stat,%cpu,cputime,user,stat,wchan:20,comm:32 --sort %cpu'
 alias pgg='ps -Af | grep' # (R) Search running processess
 
 # Grep commands
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
+alias egrep='egrep --exclude=cscope.out --exclude=tags --color=auto'
+alias fgrep='fgrep --exclude=cscope.out --exclude=tags --color=auto'
+alias grep='grep --exclude=cscope.out --exclude=tags --color=auto'
 alias hgrep='history | grep -i '
 
 alias shutdown='sudo shutdown now'
 alias c="clear"
-alias xterm='xterm -bg black -fg green &'
 alias depth="find . -printf '%d\n' | sort -n | tail -1"
 alias :wq="echo \"You're not in vim, you fucking moron.\""
 alias :q="echo \"You're not in vim, you fucking moron.\""
@@ -42,8 +47,14 @@ alias :w="echo \"You're not in vim, you fucking moron.\""
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias bc="bc -l"
 
-# Router Stuff
-alias router="ssh root@192.168.1.1"
-alias mount_router="sshfs root@192.168.1.1:/opt/VIDEO /mnt/router -C -o umask=777"
+alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 &'
+
+# Look for neovim
+if [ -x "$(command -v nvim)" ]; then
+    alias vim='nvim'
+fi
+
+# Use info with vi bindings
+alias info="info --vi-keys"
 
 set -o vi
