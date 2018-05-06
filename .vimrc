@@ -82,7 +82,9 @@ if has('nvim')
     " Vim-Plug
     call plug#begin('~/.vim/plugged')
 
-    Plug 'vim-scripts/vimwiki'
+    Plug 'vimwiki/vimwiki', {
+    \ 'branch': 'dev'
+    \ }
     Plug 'lervag/vimtex'
 
     " Language Packs
