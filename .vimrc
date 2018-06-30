@@ -95,6 +95,9 @@ if has('nvim')
     Plug 'roxma/ncm-clang'
     Plug 'roxma/nvim-cm-racer'
 
+    " Git
+    Plug 'tpope/vim-fugitive'
+
     " Rust
     Plug 'rust-lang/rust.vim'
     Plug 'racer-rust/vim-racer'
