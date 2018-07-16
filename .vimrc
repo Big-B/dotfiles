@@ -184,6 +184,9 @@ autocmd FileType gitcommit setlocal spell tw=72
 " Latex
 autocmd FileType tex setlocal spell tw=72
 
+" Txt
+autocmd FileType text setlocal spell tw=72
+
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
 
