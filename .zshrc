@@ -5,7 +5,7 @@ ZSH=/usr/share/oh-my-zsh/
 # CASE_SENSITIVE="true"
 
 # Set term
-TERM=rxvt-unicode-256color
+# TERM=rxvt-unicode-256color
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
