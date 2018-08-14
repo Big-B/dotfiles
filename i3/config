@@ -111,6 +111,7 @@ bindsym $mod+x [urgent=latest] focus
 assign [class="(?i)firefox"] $ws_web
 assign [class="(?i)gpmdp"] $ws_music
 assign [class="(?i)riot"] $ws_chat
+assign [class="(?i)telegram"] $ws_chat
 
 # Autostart
 #exec --no-startup-id /usr/local/bin/touchpad_toggle.sh &
