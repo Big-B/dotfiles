@@ -52,8 +52,8 @@ set mouse=a
 " Make backspace work like other apps
 set backspace=2
 
-" Line numbers
-set number
+" Line numbers -- hybrid
+set number relativenumber
 
 " Ignoring cases
 set ignorecase
