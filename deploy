@@ -23,7 +23,8 @@ readonly HOME_FILES=".bash_aliases
 readonly CONFIG_FILES="awesome
     i3
     polybar
-    base16-shell"
+    base16-shell
+    alacritty"
 
 # Make sure the config directory exists
 mkdir -p $HOME/$CONFIG_DIR
