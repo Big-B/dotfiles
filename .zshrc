@@ -42,7 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode archlinux python systemd common-aliases)
+plugins=(git vi-mode archlinux python systemd common-aliases autojump)
 
 # User configuration
 
@@ -104,3 +104,9 @@ bindkey '^R' history-incremental-search-backward
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# zsh-autosuggestions
+ZSH_AUTO_SUG=/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f $ZSH_AUTO_SUG ]]; then
+    source $ZSH_AUTO_SUG
+fi
