@@ -95,7 +95,12 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
 fi
 
 # Stupid oh-my-zsh aliases
-unalias rm cp mv &> /dev/null || true
+unalias rm cp mv fd &> /dev/null || true
 
 # Key binding for reverse history search
 bindkey '^R' history-incremental-search-backward
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"

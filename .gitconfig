@@ -2,7 +2,7 @@
 	name = Brandon Mittman
 	email = BrandonMittman@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3

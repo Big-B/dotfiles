@@ -75,8 +75,8 @@ highlight MatchParen ctermbg=4
 
 " Personal favorite colorscheme
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 if has('nvim')
     " Vim-Plug
@@ -117,6 +117,10 @@ if has('nvim')
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+
+    " Base16
+    Plug 'chriskempson/base16-vim'
+
     call plug#end()
 
     let g:racer_experimental_completer = 1
@@ -204,3 +208,9 @@ set omnifunc=syntaxcomplete#Complete
 
 filetype plugin indent on
 syntax enable
+
+" Support base16
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
