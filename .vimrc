@@ -214,3 +214,8 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 endif
+
+" Column set at 80
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
