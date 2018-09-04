@@ -8,6 +8,7 @@ readonly CONFIG_DIR=.config
 readonly HOME_FILES=".bash_aliases
     .bash_profile
     .bashrc
+    .fehbg
     .gitconfig
     .speedmap
     .tmux.conf

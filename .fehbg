@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --bg-scale '/home/mittmanb/syncthing/sync/desktop/blue_snake.jpg' 
