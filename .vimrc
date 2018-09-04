@@ -1,9 +1,5 @@
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
-autocmd BufNewFile,BufRead *.c set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
-autocmd BufNewFile,BufRead *.py set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
-autocmd BufNewFile,BufRead *.java set formatprg=astyle\ -s4pA3wYfk1j\ --delete-empty-lines
 
 " Necessary for some vim stuff
 set nocompatible
@@ -75,8 +71,6 @@ highlight MatchParen ctermbg=4
 
 " Personal favorite colorscheme
 syntax enable
-" set background=dark
-" colorscheme solarized
 
 if has('nvim')
     " Vim-Plug
@@ -120,6 +114,10 @@ if has('nvim')
 
     " Base16
     Plug 'chriskempson/base16-vim'
+
+    " Autoformatting
+    Plug 'chiel92/vim-autoformat'
+    au BufWrite * :Autoformat
 
     call plug#end()
 
