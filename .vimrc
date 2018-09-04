@@ -77,8 +77,8 @@ if has('nvim')
     call plug#begin('~/.vim/plugged')
 
     Plug 'vimwiki/vimwiki', {
-    \ 'branch': 'dev'
-    \ }
+                \ 'branch': 'dev'
+                \ }
     Plug 'lervag/vimtex'
 
     " Language Packs
@@ -108,24 +108,23 @@ if has('nvim')
     Plug 'rust-lang/rust.vim'
     Plug 'racer-rust/vim-racer'
     Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+                \ 'branch': 'next',
+                \ 'do': 'bash install.sh',
+                \ }
 
     " Base16
     Plug 'chriskempson/base16-vim'
 
     " Autoformatting
     Plug 'chiel92/vim-autoformat'
-    au BufWrite * :Autoformat
 
     call plug#end()
 
     let g:racer_experimental_completer = 1
 
     let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
+                \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+                \ }
 
     nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
     nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -188,7 +187,7 @@ if &diff
             let opt = opt . " -wbB "
         endif
         call system("diff -a -d --binary " . opt .
-            \ v:fname_in . " " . v:fname_new . " > " . v:fname_out)
+                    \ v:fname_in . " " . v:fname_new . " > " . v:fname_out)
     endfunction
 endif
 
