@@ -60,7 +60,7 @@ export EDITOR='nvim'
 export MAKEFLAGS="-j`nproc`"
 
 # Compile flags
-export CFLAGS="-march=native -pipe -fstack-protector-strong"
+export CFLAGS="-march=native -pipe -fstack-protector-strong -O3"
 export CXXFLAGS="${CFLAGS}"
 
 # Setup racer variables for rust
