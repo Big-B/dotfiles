@@ -58,6 +58,7 @@ alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/St
 # Look for neovim
 if [ -x "$(command -v nvim)" ]; then
     alias vim='nvim'
+    alias vimdiff='nvim -d'
     alias plugup='nvim +PlugUpdate +UpdateRemotePlugins'
 fi
 
