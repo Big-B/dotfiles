@@ -200,6 +200,9 @@ autocmd FileType tex setlocal spell tw=72
 " Txt
 autocmd FileType text setlocal spell tw=72
 
+" Markdown
+autocmd FileType markdown setlocal spell tw=72
+
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
 
