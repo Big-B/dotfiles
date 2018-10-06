@@ -192,16 +192,19 @@ if &diff
 endif
 
 " Git
-autocmd FileType gitcommit setlocal spell tw=72
+autocmd FileType gitcommit setlocal spell tw=80
 
 " Latex
-autocmd FileType tex setlocal spell tw=72
+autocmd FileType tex setlocal spell tw=80
 
 " Txt
-autocmd FileType text setlocal spell tw=72
+autocmd FileType text setlocal spell tw=80
 
 " Markdown
-autocmd FileType markdown setlocal spell tw=72
+autocmd FileType markdown setlocal spell tw=80
+
+" Vimwiki
+autocmd FileType vimwiki setlocal spell tw=80
 
 " Omni completion
 set omnifunc=syntaxcomplete#Complete
