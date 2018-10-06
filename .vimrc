@@ -80,6 +80,7 @@ if has('nvim')
                 \ 'branch': 'dev'
                 \ }
     Plug 'lervag/vimtex'
+    Plug 'tbabej/taskwiki'
 
     " Language Packs
     Plug 'sheerun/vim-polyglot'
