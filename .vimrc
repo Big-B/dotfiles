@@ -223,3 +223,14 @@ endif
 if exists('+colorcolumn')
     set colorcolumn=80
 endif
+
+" Toggle the conceal level
+function! ToggleConcealLevel()
+    if &conceallevel == 0
+        setlocal conceallevel=2
+    else
+        setlocal conceallevel=0
+    endif
+endfunction
+
+nnoremap <silent> <C-c><C-c> :call ToggleConcealLevel()<CR>
