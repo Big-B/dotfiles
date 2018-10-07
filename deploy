@@ -11,7 +11,6 @@ readonly HOME_FILES=".bash_aliases
     .fehbg
     .gitconfig
     .speedmap
-    .taskrc
     .tmux.conf
     .toprc
     .vim
