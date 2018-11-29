@@ -72,20 +72,20 @@ highlight MatchParen ctermbg=4
 " Personal favorite colorscheme
 syntax enable
 
+" Vim-Plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'vimwiki/vimwiki', {
+            \ 'branch': 'dev'
+            \ }
+Plug 'lervag/vimtex'
+Plug 'tbabej/taskwiki'
+
+" Language Packs
+Plug 'sheerun/vim-polyglot'
+
+" Completion
 if has('nvim')
-    " Vim-Plug
-    call plug#begin('~/.vim/plugged')
-
-    Plug 'vimwiki/vimwiki', {
-                \ 'branch': 'dev'
-                \ }
-    Plug 'lervag/vimtex'
-    Plug 'tbabej/taskwiki'
-
-    " Language Packs
-    Plug 'sheerun/vim-polyglot'
-
-    " Completion
     Plug 'ncm2/ncm2'
     Plug 'roxma/nvim-yarp'
 
@@ -101,50 +101,39 @@ if has('nvim')
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-racer'
     Plug 'ncm2/ncm2-pyclang'
+endif
 
-    " Git
-    Plug 'tpope/vim-fugitive'
+" Git
+Plug 'tpope/vim-fugitive'
 
-    " Rust
-    Plug 'rust-lang/rust.vim'
-    Plug 'racer-rust/vim-racer'
-    Plug 'autozimu/LanguageClient-neovim', {
-                \ 'branch': 'next',
-                \ 'do': 'bash install.sh',
-                \ }
+" Rust
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ }
 
-    " Base16
-    Plug 'chriskempson/base16-vim'
+" Base16
+Plug 'chriskempson/base16-vim'
+Plug 'chiel92/vim-autoformat'
 
-    " Autoformatting
-    Plug 'chiel92/vim-autoformat'
+call plug#end()
 
-    call plug#end()
+let g:racer_experimental_completer = 1
 
-    let g:racer_experimental_completer = 1
+let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ }
 
-    let g:LanguageClient_serverCommands = {
-                \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-                \ }
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
-    nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-    nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-    nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-elseif has('vundle')
-    " Vundle
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-
-    " Plugins
-    Plugin 'vimwiki/vimwiki'
-    Plugin 'lervag/vimtex'
-
-    " Language Packs
-    Plugin 'sheerun/vim-polyglot'
-
-    " let Vundle manage Vundle
-    Plugin 'VundleVim/Vundle.vim'
-    call vundle#end()
+" Base16
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
 endif
 
 " Show matching braces
@@ -212,12 +201,6 @@ set omnifunc=syntaxcomplete#Complete
 
 filetype plugin indent on
 syntax enable
-
-" Support base16
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
 
 " Column set at 80
 if exists('+colorcolumn')
