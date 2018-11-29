@@ -118,6 +118,8 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'chriskempson/base16-vim'
 Plug 'chiel92/vim-autoformat'
 
+Plug 'scrooloose/nerdtree'
+
 call plug#end()
 
 let g:racer_experimental_completer = 1
