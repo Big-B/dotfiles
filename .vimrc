@@ -69,7 +69,7 @@ set hlsearch
 " Highlight other parenthesis
 highlight MatchParen ctermbg=4
 
-" Personal favorite colorscheme
+" Enable syntax highlighting
 syntax enable
 
 " Vim-Plug
