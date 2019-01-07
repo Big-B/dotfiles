@@ -30,12 +30,14 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 
-" Set english for spellcheck, but default to off
+" Set english for spellcheck, default to on
 if !has('nvim')
     if version >= 700
         set spl=en spell
-        set nospell
+        set spell
     endif
+else
+    set spl=en spell
 endif
 
 " Tab completion stuff
