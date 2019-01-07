@@ -65,4 +65,7 @@ fi
 # Use info with vi bindings
 alias info="info --vi-keys"
 
+# Attach to an already exiting tmux session or create a new one
+alias tm="tmux a || tmux"
+
 set -o vi
