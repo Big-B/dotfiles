@@ -244,4 +244,7 @@ assign [class="(?i)google play music desktop player"] $ws_music
 assign [class="(?i)riot"] $ws_chat
 assign [class="(?i)telegram"] $ws_chat
 
+# Custom bindings
+bindsym --release Print exec grim /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
+
 include /etc/sway/config.d/*
