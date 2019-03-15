@@ -24,6 +24,7 @@ readonly HOME_FILES=".bash_aliases
 readonly CONFIG_FILES="awesome
     i3
     sway
+    waybar
     polybar
     base16-shell
     alacritty"
