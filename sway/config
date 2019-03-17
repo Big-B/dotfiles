@@ -249,4 +249,8 @@ assign [class="(?i)telegram"] $ws_chat
 # Custom bindings
 bindsym --release Print exec grim /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
 
+# Audio
+bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+bindsym XF86AudioLowerVolume exec pamixer --decrease 5
+
 include /etc/sway/config.d/*
