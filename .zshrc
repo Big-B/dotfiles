@@ -107,5 +107,5 @@ fi
 # If in tty1, start X
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
     #startx
-    XKB_DEFAULT_LAYOUT=us exec sway
+    XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
 fi
