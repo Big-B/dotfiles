@@ -80,6 +80,7 @@ output X11-1 resolution 1920x1080 position 1920,0
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us
     xkb_options caps:swapescape
+    xkb_numlock enabled
 }
 
 ### Key bindings
