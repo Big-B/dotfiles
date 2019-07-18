@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "battery#bat0", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "backlight", "battery", "clock", "tray"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
@@ -62,9 +62,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat0": {
-        "bat": "BAT0"
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
