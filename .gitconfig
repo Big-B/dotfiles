@@ -5,7 +5,8 @@
 	editor = nvim
 [merge]
 	tool = vimdiff
-	conflictstyle = diff3
+[mergetool "vimdiff"]
+        cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
 	co = checkout
 	br = branch

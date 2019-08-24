@@ -87,13 +87,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%})%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%})"
 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# If in tty1, start X
-if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
-    startx
-fi
-
 # Stupid oh-my-zsh aliases
 unalias rm cp mv fd &> /dev/null || true
 
@@ -109,4 +102,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 ZSH_AUTO_SUG=/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 if [[ -f $ZSH_AUTO_SUG ]]; then
     source $ZSH_AUTO_SUG
+fi
+
+# If in tty1, start X
+if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
+    #startx
+    XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
 fi

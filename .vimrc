@@ -33,11 +33,10 @@ set softtabstop=4
 " Set english for spellcheck, default to on
 if !has('nvim')
     if version >= 700
-        set spl=en spell
-        set spell
+        set spl=en
     endif
 else
-    set spl=en spell
+    set spl=en
 endif
 
 " Tab completion stuff
@@ -81,6 +80,7 @@ Plug 'vimwiki/vimwiki', {
             \ 'branch': 'dev'
             \ }
 Plug 'lervag/vimtex'
+
 Plug 'tbabej/taskwiki'
 
 " Language Packs
@@ -118,9 +118,14 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " Base16
 Plug 'chriskempson/base16-vim'
+
 Plug 'chiel92/vim-autoformat'
 
 Plug 'scrooloose/nerdtree'
+
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -133,6 +138,8 @@ let g:LanguageClient_serverCommands = {
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+let g:vimtex_view_general_viewer = 'zathura'
 
 " Base16
 if filereadable(expand("~/.vimrc_background"))
