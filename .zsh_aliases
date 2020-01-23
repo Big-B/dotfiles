@@ -65,7 +65,7 @@ fi
 # Use info with vi bindings
 alias info="info --vi-keys"
 
-# Attach to an already exiting tmux session or create a new one
-alias tm="tmux a || tmux"
+# Unset the TMUX environment variable to allow for nested sessions
+alias tmux="TMUX= tmux"
 
 set -o vi
