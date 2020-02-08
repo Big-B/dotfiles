@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=~/.oh-my-zsh/
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

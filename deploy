@@ -10,6 +10,7 @@ readonly HOME_FILES=".bash_aliases
     .bashrc
     .fehbg
     .gitconfig
+    .oh-my-zsh
     .speedmap
     .tmux.conf
     .toprc
