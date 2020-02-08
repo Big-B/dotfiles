@@ -102,6 +102,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 ZSH_AUTO_SUG="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 if [[ -f $ZSH_AUTO_SUG ]]; then
     source $ZSH_AUTO_SUG
+    bindkey '^ ' autosuggest-accept
 fi
 
 # zsh-histdb
