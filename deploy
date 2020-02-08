@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 set -u
+set -x
 
 readonly CONFIG_DIR=.config
 
@@ -59,4 +60,12 @@ if which nvim &> /dev/null ; then
     # Link
     ln -sf $HOME/.vim $NVIM_DIR
     ln -sf $HOME/.vimrc $NVIM_DIR/init.vim
+fi
+
+# Deploy all the custom plugins for zsh
+readonly ZSH_PLUGINS=$HOME/.oh-my-zsh/custom/plugins/
+if [ -d "$ZSH_PLUGINS" ]; then
+    for plugin in `ls $PWD/zsh_plugins/`; do
+        ln -sf $PWD/zsh_plugins/$plugin $ZSH_PLUGINS/
+    done
 fi

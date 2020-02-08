@@ -99,13 +99,13 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # zsh-autosuggestions
-ZSH_AUTO_SUG=/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTO_SUG="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 if [[ -f $ZSH_AUTO_SUG ]]; then
     source $ZSH_AUTO_SUG
 fi
 
 # zsh-histdb
-ZSH_HIST_DB="$HOME/.zsh-histdb/sqlite-history.zsh"
+ZSH_HIST_DB="$HOME/.oh-my-zsh/Custom/plugins/zsh-histdb/sqlite-history.zsh"
 if [[ -f $ZSH_HIST_DB ]]; then
     source $ZSH_HIST_DB
     autoload -Uz add-zsh-hook

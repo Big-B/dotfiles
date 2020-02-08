@@ -7,6 +7,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
-[submodule ".zsh-histdb"]
-	path = .zsh-histdb
+[submodule "zsh_plugins/zsh-histdb"]
+	path = zsh_plugins/zsh-histdb
 	url = https://github.com/larkery/zsh-histdb.git
+[submodule "zsh_plugins/zsh-autosuggestions"]
+	path = zsh_plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
