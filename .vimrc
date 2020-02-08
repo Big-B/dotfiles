@@ -122,6 +122,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'chiel92/vim-autoformat'
 
 Plug 'scrooloose/nerdtree'
+nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc'
