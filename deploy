@@ -8,6 +8,7 @@ readonly CONFIG_DIR=.config
 readonly HOME_FILES=".bash_aliases
     .bash_profile
     .bashrc
+    .Xresources
     .fehbg
     .gitconfig
     .oh-my-zsh
@@ -17,7 +18,7 @@ readonly HOME_FILES=".bash_aliases
     .vim
     .vimrc
     .xinitrc
-    .Xresources
+    .zsh-histdb
     .zsh_aliases
     .zshrc"
 

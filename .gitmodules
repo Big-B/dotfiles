@@ -7,3 +7,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".zsh-histdb"]
+	path = .zsh-histdb
+	url = https://github.com/larkery/zsh-histdb.git

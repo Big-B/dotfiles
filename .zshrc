@@ -104,6 +104,32 @@ if [[ -f $ZSH_AUTO_SUG ]]; then
     source $ZSH_AUTO_SUG
 fi
 
+# zsh-histdb
+ZSH_HIST_DB="$HOME/.zsh-histdb/sqlite-history.zsh"
+if [[ -f $ZSH_HIST_DB ]]; then
+    source $ZSH_HIST_DB
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd histdb-update-outcome
+
+    source $HOME/.zsh-histdb/histdb-interactive.zsh
+    bindkey '^R' _histdb-isearch
+
+    # Use the database for autosuggestions
+    if [[ -f $ZSH_AUTO_SUG ]]; then
+        _zsh_autosuggest_strategy_histdb_top_here() {
+            local query="select commands.argv from
+            history left join commands on history.command_id = commands.rowid
+            left join places on history.place_id = places.rowid
+            where places.dir LIKE '$(sql_escape $PWD)%'
+            and commands.argv LIKE '$(sql_escape $1)%'
+            group by commands.argv order by count(*) desc limit 1"
+            suggestion=$(_histdb_query "$query")
+        }
+
+        ZSH_AUTOSUGGEST_STRATEGY=histdb_top_here
+    fi
+fi
+
 # If in tty1, start X
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
     #startx
