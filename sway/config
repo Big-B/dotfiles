@@ -31,7 +31,7 @@ set $term alacritty
 
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu dmenu_path | dmenu | xargs swaymsg exec
+set $menu j4-dmenu-desktop --dmenu='bemenu -i --tf "#000000" --hb "#0f3f3f" --hf "#dcdccc" --nb "#000000" --nf "#dcdccc" --fn "pango:DejaVu Sans Mono 12"'
 
 ### Output configuration
 #
