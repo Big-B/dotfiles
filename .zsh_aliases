@@ -15,8 +15,13 @@ alias reflector="sudo reflector --verbose --sort rate --threads `nproc` --save /
 # ssh to lectura
 alias lectura="ssh mittmanb@lectura.cs.arizona.edu"
 
-# List commands
-alias ls="ls -hF --color=auto"
+# List commands -- Use exa if available
+if hash exa &> /dev/null; then
+    alias ls="exa -hF --color=auto"
+else
+    alias ls="ls -hF --color=auto"
+fi
+
 alias ll="ls -l"
 alias lr="ls -R" # Recursive list
 alias la="ll -a"
