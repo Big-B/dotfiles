@@ -23,13 +23,20 @@ else
 fi
 
 alias ll="ls -l"
+alias l="ll"
 alias lr="ls -R" # Recursive list
 alias la="ll -a"
-alias lx="ll -BX" # Sort by extensions
-alias lz="ll -rS" # Sort by size
-alias lt="ll -rt" # Sort by date
-alias l="ls -CF"
 alias lm="la | less"
+
+if hash exa &> /dev/null; then
+    alias lx="ll --sort=extension" # Sort by extensions
+    alias lz="ll --sort=size"      # Sort by size
+    alias lt="ll --sort=modified"  # Sort by date
+else
+    alias lx="ll -BX" # Sort by extensions
+    alias lz="ll -rS" # Sort by size
+    alias lt="ll -rt" # Sort by date
+fi
 
 # Filesystem/process commands
 alias df='df -h' # Human readable
