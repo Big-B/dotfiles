@@ -3,6 +3,10 @@
 	email = BrandonMittman@gmail.com
 [core]
 	editor = nvim
+[diff]
+	tool = vimdiff
+[difftool "vimdiff"]
+        cmd = nvim -d $LOCAL $REMOTE
 [merge]
 	tool = vimdiff
 [mergetool "vimdiff"]
