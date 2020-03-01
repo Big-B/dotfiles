@@ -133,7 +133,7 @@ call plug#end()
 let g:racer_experimental_completer = 1
 
 let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ 'rust': ['rust-analyzer'],
             \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
