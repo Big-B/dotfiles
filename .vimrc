@@ -19,7 +19,7 @@ let g:tex_flavor = "latex"
 " Autoindent
 set autoindent
 
-" Hid buffers when they are abandoned
+" Hide buffers when they are abandoned
 set hidden
 
 " Spaces instead of tab char
@@ -30,7 +30,7 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 
-" Set english for spellcheck, default to on
+" Set English for spell check, default to on
 if !has('nvim')
     if version >= 700
         set spl=en
