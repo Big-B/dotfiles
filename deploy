@@ -28,7 +28,8 @@ readonly CONFIG_FILES="awesome
     waybar
     polybar
     base16-shell
-    alacritty"
+    alacritty
+    procps"
 
 # Make sure the config directory exists
 mkdir -p $HOME/$CONFIG_DIR
