@@ -250,6 +250,7 @@ assign [class="(?i)google play music desktop player"] $ws_music
 assign [class="(?i)riot"] $ws_chat
 assign [class="(?i)telegram"] $ws_chat
 assign [class="(?i)discord"] $ws_chat
+for_window [class="(?i)discord"] move window to workspace $ws_chat
 
 # Custom bindings
 bindsym --release Print exec grim /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
@@ -258,5 +259,3 @@ bindsym --release Print exec grim /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioMute exec pamixer -t
-
-include /etc/sway/config.d/*
