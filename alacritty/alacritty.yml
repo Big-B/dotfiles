@@ -87,55 +87,55 @@
   #multiplier: 3
 
 # Font configuration
-font:
+#font:
   # Normal (roman) font face
-  normal:
+  #normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "DejaVu Sans Mono"
+    #family: "DejaVu Sans Mono"
 
     # The `style` can be specified to pick a specific face.
     # style: Regular
 
   # Bold font face
-  bold:
+  #bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "DejaVu Sans Mono"
+    #family: "DejaVu Sans Mono"
 
     # The `style` can be specified to pick a specific face.
     # style: Bold
 
   # Italic font face
-  italic:
+  #italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "DejaVu Sans Mono"
+    #family: "DejaVu Sans Mono"
 
     # The `style` can be specified to pick a specific face.
     # style: Italic
 
   # Bold italic font face
-  bold_italic:
+  #bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "DejaVu Sans Mono"
+    #family: "DejaVu Sans Mono"
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-  size: 10.0
+  #size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -187,7 +187,7 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are
   # unset, the cursor color will be the inverse of the cell color.
-  #cursor:
+  cursor:
     text: '0x20201d'
     cursor: '0xa6a28c'
 
@@ -222,12 +222,12 @@ colors:
   # Bright colors
   bright:
     black:   '0x7d7a68'
-    red:     '0xb65611'
-    green:   '0x292824'
-    yellow:  '0x6e6b5e'
-    blue:    '0x999580'
-    magenta: '0xe8e4cf'
-    cyan:    '0xd43552'
+    red:     '0xd73737'
+    green:   '0x60ac39'
+    yellow:  '0xae9513'
+    blue:    '0x6684e1'
+    magenta: '0xb854d4'
+    cyan:    '0x1fad83'
     white:   '0xfefbec'
 
   # Dim colors
@@ -252,7 +252,13 @@ colors:
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '0xb65611' }
+    - { index: 17, color: '0xd43552' }
+    - { index: 18, color: '0x292824' }
+    - { index: 19, color: '0x6e6b5e' }
+    - { index: 20, color: '0x999580' }
+    - { index: 21, color: '0xe8e4cf' }
 
 # Visual Bell
 #
