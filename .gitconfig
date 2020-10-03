@@ -3,6 +3,7 @@
 	email = BrandonMittman@gmail.com
 [core]
 	editor = nvim
+	excludesFile = /home/mittmanb/.gitglobalignore
 [diff]
 	tool = vimdiff
 [difftool "vimdiff"]

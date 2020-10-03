@@ -11,6 +11,7 @@ readonly HOME_FILES=".bash_aliases
     .Xresources
     .fehbg
     .gitconfig
+    .gitglobalignore
     .oh-my-zsh
     .speedmap
     .tmux.conf
