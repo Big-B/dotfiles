@@ -109,7 +109,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-    # lock the scree
+    # lock the screen
     bindsym $mod+q exec 'swaylock-fancy -p -t ""'
 #
 # Moving around:
@@ -254,6 +254,7 @@ for_window [class="(?i)discord"] move window to workspace $ws_chat
 
 # Custom bindings
 bindsym --release Print exec grim /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release $mod+Print exec grim -g "$(slurp)" /tmp/screen_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # Audio
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
