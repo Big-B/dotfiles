@@ -63,12 +63,6 @@ export MAKEFLAGS="-j`nproc`"
 export CFLAGS="-march=native -pipe -fstack-protector-strong -O3"
 export CXXFLAGS="${CFLAGS}"
 
-# Setup racer variables for rust
-which rustc &> /dev/null
-if [ $? -eq 0 ]; then
-    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
