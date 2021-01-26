@@ -248,7 +248,7 @@ bar {
 assign [class="(?i)firefox"] $ws_web
 assign [class="(?i)google play music desktop player"] $ws_music
 assign [class="(?i)riot"] $ws_chat
-assign [class="(?i)telegram"] $ws_chat
+assign [app_id="(?i)telegram"] $ws_chat
 assign [class="(?i)discord"] $ws_chat
 for_window [class="(?i)discord"] move window to workspace $ws_chat
 
