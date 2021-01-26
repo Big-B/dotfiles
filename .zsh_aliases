@@ -17,7 +17,7 @@ alias lectura="ssh mittmanb@lectura.cs.arizona.edu"
 
 # List commands -- Use exa if available
 if hash exa &> /dev/null; then
-    alias ls="exa -hF --color=auto"
+    alias ls="exa -ghF --color=auto"
 else
     alias ls="ls -hF --color=auto"
 fi
