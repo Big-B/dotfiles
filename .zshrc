@@ -100,13 +100,11 @@ if [[ -f $ZSH_AUTO_SUG ]]; then
 fi
 
 # zsh-histdb
-ZSH_HIST_DB="$HOME/.oh-my-zsh/Custom/plugins/zsh-histdb/sqlite-history.zsh"
+ZSH_HIST_DB="$HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh"
 if [[ -f $ZSH_HIST_DB ]]; then
     source $ZSH_HIST_DB
-    autoload -Uz add-zsh-hook
-    add-zsh-hook precmd histdb-update-outcome
 
-    source $HOME/.zsh-histdb/histdb-interactive.zsh
+    source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/histdb-interactive.zsh
     bindkey '^R' _histdb-isearch
 
     # Use the database for autosuggestions
