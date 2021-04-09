@@ -58,10 +58,11 @@ output X11-1 resolution 1920x1080 position 1920,0
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
- exec swayidle -w \
-          timeout 300 'swaylock-fancy -p -t ""' \
+ exec swayidle -d -w \
+          timeout 300 'swaylock-fancy -p -t "" &' \
           timeout 600 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
+          timeout 3600 'systemctl hibernate' \
           before-sleep 'swaylock-fancy -p -t ""'
 
 ### Input configuration
