@@ -60,7 +60,7 @@ output X11-1 resolution 1920x1080 position 1920,0
 # resumed. It will also lock your screen before your computer goes to sleep.
  exec swayidle -d -w \
           timeout 300 'swaylock-fancy -p -t "" &' \
-          timeout 600 'swaymsg "output * dpms off"' \
+          timeout 360 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
           timeout 3600 'systemctl hibernate' \
           before-sleep 'swaylock-fancy -p -t ""'
