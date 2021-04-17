@@ -15,7 +15,6 @@ readonly HOME_FILES=".bash_aliases
     .oh-my-zsh
     .speedmap
     .tmux.conf
-    .toprc
     .vim
     .vimrc
     .xinitrc
@@ -44,6 +43,9 @@ done
 for link in $CONFIG_FILES; do
     ln -sf $PWD/$link $HOME/$CONFIG_DIR/
 done
+
+# Support older versions of top
+ln -sf $PWD/procps/toprc $HOME/.toprc
 
 # Check for nvim and deploy vim files
 if which nvim &> /dev/null ; then
