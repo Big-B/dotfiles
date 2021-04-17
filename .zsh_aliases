@@ -83,4 +83,9 @@ alias tmux="TMUX= tmux"
 # Russian Roulette
 alias roulette='[ $[ RANDOM % 6 ] = 0 ] && echo "*Bang*" || echo "*Click*"'
 
+# Check for plocate
+if hash plocate &> /dev/null; then
+    alias locate='plocate'
+fi
+
 set -o vi
