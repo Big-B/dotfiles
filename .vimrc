@@ -102,7 +102,6 @@ if has('nvim')
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-tmux'
     Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-racer'
     Plug 'ncm2/ncm2-pyclang'
 
 endif
@@ -112,7 +111,6 @@ Plug 'tpope/vim-fugitive'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 Plug 'autozimu/LanguageClient-neovim', {
             \ 'branch': 'next',
             \ 'do': 'bash install.sh',
