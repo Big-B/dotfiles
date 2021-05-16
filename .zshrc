@@ -103,6 +103,7 @@ fi
 ZSH_HIST_DB="$HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh"
 if [[ -f $ZSH_HIST_DB ]]; then
     source $ZSH_HIST_DB
+    autoload -Uz add-zsh-hook
 
     source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/histdb-interactive.zsh
     bindkey '^R' _histdb-isearch
