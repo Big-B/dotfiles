@@ -106,15 +106,14 @@ if has('nvim')
 
 endif
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
 
 " Base16
 Plug 'chriskempson/base16-vim'
@@ -133,22 +132,9 @@ Plug 'junegunn/fzf'
 
 call plug#end()
 
-let g:racer_experimental_completer = 1
-
-let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rust-analyzer'],
-            \ 'java': ['jdtls', '-data', getcwd()],
-            \ }
-
-" Debug LanguageClient
-" let g:LanguageClient_loggingLevel = 'INFO'
-" let g:LanguageClient_virtualTextPrefix = ''
-" let g:LanguageClient_loggingFile = expand('/tmp/LanguageClient.log')
-" let g:LanguageClient_serverStderr = expand('/tmp/LanguageClient.log')
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+lua << EOF
+require'lspconfig'.rust_analyzer.setup{}
+EOF
 
 let g:vimtex_view_method = 'zathura'
 
