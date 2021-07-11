@@ -104,10 +104,9 @@ if has('nvim')
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-pyclang'
 
+    " LSP
+    Plug 'neovim/nvim-lspconfig'
 endif
-
-" LSP
-Plug 'neovim/nvim-lspconfig'
 
 " Git
 Plug 'tpope/vim-fugitive'
