@@ -130,10 +130,11 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'junegunn/fzf'
 
 call plug#end()
-
+if has('nvim')
 lua << EOF
 require'lspconfig'.rust_analyzer.setup{}
 EOF
+endif
 
 let g:vimtex_view_method = 'zathura'
 
