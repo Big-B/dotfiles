@@ -81,8 +81,6 @@ Plug 'vimwiki/vimwiki', {
             \ }
 Plug 'lervag/vimtex'
 
-Plug 'tbabej/taskwiki'
-
 " Language Packs
 let g:polyglot_disabled = ['latex']
 Plug 'sheerun/vim-polyglot'
