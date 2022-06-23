@@ -7,11 +7,11 @@
 [diff]
 	tool = vimdiff
 [difftool "vimdiff"]
-        cmd = nvim -d $LOCAL $REMOTE
+	cmd = nvim -d $LOCAL $REMOTE
 [merge]
 	tool = vimdiff
 [mergetool "vimdiff"]
-        cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
 	co = checkout
 	br = branch
@@ -21,12 +21,12 @@
 [push]
 	default = simple
 [grep]
-        extendRegexp = true
+	extendRegexp = true
 	lineNumber = true
 [rerere]
-        enabled = true
+	enabled = true
 [rebase]
-        autosquash = true
+	autosquash = true
 [pull]
 	rebase = false
 [commit]
