@@ -68,7 +68,7 @@ require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
 
     -- Base16
-    use 'chriskempson/base16-vim'
+    use {'chriskempson/base16-vim', config =
     vim.api.nvim_exec(
         [[
             if filereadable(expand("~/.vimrc_background"))
@@ -77,6 +77,7 @@ require('packer').startup(function(use)
             endif
         ]],
         true)
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
