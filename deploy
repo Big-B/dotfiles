@@ -61,7 +61,6 @@ if which nvim &> /dev/null ; then
 
     # Link
     ln -sf $HOME/.vim $NVIM_DIR
-    ln -sf $HOME/.vimrc $NVIM_DIR/init.vim
 fi
 
 # Deploy all the custom plugins for zsh
