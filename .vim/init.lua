@@ -170,7 +170,7 @@ vim.api.nvim_exec(
             set diffopt+=iwhite
             set diffexpr=DiffW()
             function DiffW()
-                let opt = --"
+                let opt = ""
                 if &diffopt =~ "icase"
                     let opt = opt . " -i "
                 endif
