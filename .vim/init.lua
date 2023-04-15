@@ -41,6 +41,7 @@ require('packer').startup(function(use)
 
     -- Rust
     use 'rust-lang/rust.vim'
+    use 'simrat39/rust-tools.nvim'
 
     -- Autoformatting
     use 'chiel92/vim-autoformat'
@@ -203,3 +204,16 @@ vim.cmd[[filetype plugin indent on]]
 
 -- Column set at 80
 vim.opt.colorcolumn = "80"
+
+-- Rust tools
+local rt = require("rust-tools")
+rt.setup({
+        server = {
+            on_attach = function(_, bufnr)
+                -- Hover actions
+                vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+                -- Code action groups
+                vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+            end,
+        },
+    })
