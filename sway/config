@@ -65,7 +65,7 @@ output X11-1 resolution 1920x1080 position 1920,0
           timeout 3600 'systemctl hibernate' \
           before-sleep 'swaylock-fancy -p -t ""'
 
-exec mako
+exec mako --default-timeout 10000
 
 ### Input configuration
 #
