@@ -29,7 +29,8 @@ readonly CONFIG_FILES="awesome
     polybar
     base16-shell
     alacritty
-    procps"
+    procps
+    user-dirs.conf"
 
 # Make sure the config directory exists
 mkdir -p $HOME/$CONFIG_DIR
