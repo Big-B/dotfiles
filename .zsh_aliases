@@ -32,6 +32,7 @@ if hash eza &> /dev/null; then
     alias lx="ll --sort=extension" # Sort by extensions
     alias lz="ll --sort=size"      # Sort by size
     alias lt="ll --sort=modified"  # Sort by date
+    alias lrt="lt"                 # Override default from omz
 else
     alias lx="ll -BX" # Sort by extensions
     alias lz="ll -rS" # Sort by size
