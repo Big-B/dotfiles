@@ -7,86 +7,85 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Ensure packer is installed
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require("lazy").setup({
+        {"vimwiki/vimwiki", branch = "dev"},
+        "lervag/vimtex",
 
-require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    -- My plugins here
+        -- Language Packs
+        {"sheerun/vim-polyglot",
+            init = function() vim.g.polyglot_disabled = {'latex'} end
+        },
 
-    use {'vimwiki/vimwiki', branch = 'dev'}
-    use 'lervag/vimtex'
-    vim.g.vimtex_view_method = 'zathura'
+        -- LSP
+        "neovim/nvim-lspconfig",
 
-    -- Language Packs
-    vim.g.polyglot_disabled = {'latex'}
-    use 'sheerun/vim-polyglot'
+        -- Git
+        'tpope/vim-fugitive',
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
+        -- Rust
+        'rust-lang/rust.vim',
+        'simrat39/rust-tools.nvim',
 
-    -- Git
-    use 'tpope/vim-fugitive'
+        -- Autoformatting
+        'chiel92/vim-autoformat',
 
-    -- Rust
-    use 'rust-lang/rust.vim'
-    use 'simrat39/rust-tools.nvim'
+        -- NERDTree
+        {'preservim/nerdtree', config = function ()
+            vim.api.nvim_exec(
+                [[
+                    nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+                ]], true)
+            end,
+            lazy = false,
+        },
 
-    -- Autoformatting
-    use 'chiel92/vim-autoformat'
 
-    use 'scrooloose/nerdtree'
-    map("n", "<silent> <C-n>", ":NERDTreeToggle<CR>")
+        -- Pandoc
+        'vim-pandoc/vim-pandoc',
+        'vim-pandoc/vim-pandoc-syntax',
 
-    -- Pandoc
-    use 'vim-pandoc/vim-pandoc'
-    use 'vim-pandoc/vim-pandoc-syntax'
+        -- Fuzzy search
+        'junegunn/fzf',
 
-    -- Fuzzy search
-    use 'junegunn/fzf'
+        -- Autocompletion plugin
+        'hrsh7th/nvim-cmp',
 
-    -- Autocompletion plugin
-    use 'hrsh7th/nvim-cmp'
+        -- LSP source for nvim-cmp
+        'hrsh7th/cmp-nvim-lsp',
 
-    -- LSP source for nvim-cmp
-    use 'hrsh7th/cmp-nvim-lsp'
+        -- Snippets source for nvim-cmp
+        'saadparwaiz1/cmp_luasnip',
 
-    -- Snippets source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip'
+        -- Snippets plugin
+        'L3MON4D3/LuaSnip',
 
-    -- Snippets plugin
-    use 'L3MON4D3/LuaSnip'
-
-    -- Base16
-    use {'chriskempson/base16-vim', config =
-    vim.api.nvim_exec(
-        [[
-            if exists('$BASE16_THEME')
-            \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-                let base16colorspace=256
-                colorscheme base16-$BASE16_THEME
-            endif
-        ]],
-        true)
-    }
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+        -- Base16
+        {'chriskempson/base16-vim', config =
+            function() vim.api.nvim_exec(
+                [[
+                    if exists('$BASE16_THEME')
+                    \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+                        let base16colorspace=256
+                        colorscheme base16-$BASE16_THEME
+                    endif
+	              ]],
+                true)
+	          end
+        }
+    })
 
 -- Remove any trailing whitespace that is in the file
 vim.cmd[[autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif]]
