@@ -128,3 +128,6 @@ fi
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
     XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
 fi
+
+# GPG struggles to gather password without this
+export GPG_TTY=$(tty)
