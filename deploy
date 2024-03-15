@@ -71,3 +71,5 @@ if [ -d "$ZSH_PLUGINS" ]; then
         ln -sf $PWD/zsh_plugins/$plugin $ZSH_PLUGINS/
     done
 fi
+
+ln -sf $PWD/linuxexecs $HOME/bin
