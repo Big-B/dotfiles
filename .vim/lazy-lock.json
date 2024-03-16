@@ -7,7 +7,7 @@
   "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
   "nerdtree": { "branch": "master", "commit": "f3a4d8eaa8ac10305e3d53851c976756ea9dc8e8" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
-  "nvim-lspconfig": { "branch": "master", "commit": "4bdd3800b4148f670c6cf55ef65f490148eeb550" },
+  "nvim-lspconfig": { "branch": "master", "commit": "5b364bd4db0fb68a56ffe427a370920854acb834" },
   "rust-tools.nvim": { "branch": "master", "commit": "676187908a1ce35ffcd727c654ed68d851299d3e" },
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
   "vim-autoformat": { "branch": "master", "commit": "38a01acb7471d276ecf5970ab4fd58bfebb9ea06" },
@@ -15,6 +15,6 @@
   "vim-pandoc": { "branch": "master", "commit": "fae27ec62606b6b914de5270985a69d1b5da1287" },
   "vim-pandoc-syntax": { "branch": "master", "commit": "16939cda184ff555938cc895cc62477c172997f9" },
   "vim-polyglot": { "branch": "master", "commit": "bc8a81d3592dab86334f27d1d43c080ebf680d42" },
-  "vimtex": { "branch": "master", "commit": "9ce62bbf7ea8f6bb232bbff5549cd7745a3fd918" },
+  "vimtex": { "branch": "master", "commit": "577f7c59a4c0047ef354eb2f6fef39cbdc9a4556" },
   "vimwiki": { "branch": "dev", "commit": "fde35bb87e45abe930eebef5ab99a16289e53789" }
 }
