@@ -72,4 +72,4 @@ if [ -d "$ZSH_PLUGINS" ]; then
     done
 fi
 
-ln -sf $PWD/linuxexecs $HOME/bin
+ln -sfn $PWD/linuxexecs $HOME/bin
