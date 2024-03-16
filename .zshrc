@@ -124,10 +124,15 @@ if [[ -f $ZSH_HIST_DB ]]; then
     fi
 fi
 
-# If in tty1, start X
-if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
-    XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
+# fzf integration
+if hash fzf; then
+    eval "$(fzf --zsh)"
 fi
 
 # GPG struggles to gather password without this
 export GPG_TTY=$(tty)
+
+# If in tty1, start X
+if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
+    XDG_CURRENT_DESKTOP=sway XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
+fi
