@@ -13,3 +13,6 @@
 [submodule "linuxexecs"]
 	path = linuxexecs
 	url = git@gitlab.com:Big-B/linuxexecs
+[submodule "zsh_plugins/fzf-zsh-plugin"]
+	path = zsh_plugins/fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin.git

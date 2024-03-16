@@ -125,8 +125,9 @@ if [[ -f $ZSH_HIST_DB ]]; then
 fi
 
 # fzf integration
-if hash fzf; then
-    eval "$(fzf --zsh)"
+ZSH_FZF="$HOME/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
+if [[ -f $ZSH_FZF ]]; then
+    source $ZSH_FZF
 fi
 
 # GPG struggles to gather password without this
