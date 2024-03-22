@@ -68,10 +68,10 @@ require("lazy").setup({
         'hrsh7th/cmp-nvim-lsp',
 
         -- Snippets source for nvim-cmp
-        'saadparwaiz1/cmp_luasnip',
+        {'saadparwaiz1/cmp_luasnip', ft = {'lua'}},
 
         -- Snippets plugin
-        'L3MON4D3/LuaSnip',
+        {'L3MON4D3/LuaSnip', ft = {'lua'},},
 
         -- Base16
         {'chriskempson/base16-vim', config =
