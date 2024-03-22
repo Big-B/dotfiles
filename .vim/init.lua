@@ -58,7 +58,8 @@ require("lazy").setup({
         'vim-pandoc/vim-pandoc-syntax',
 
         -- Fuzzy search
-        {'junegunn/fzf', name = "fzf", dir = "~/.fzf"},
+        {'junegunn/fzf'},
+        {'junegunn/fzf.vim'},
 
         -- Autocompletion plugin
         'hrsh7th/nvim-cmp',
