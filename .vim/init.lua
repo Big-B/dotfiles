@@ -37,7 +37,7 @@ require("lazy").setup({
 
         -- Rust
         'rust-lang/rust.vim',
-        'simrat39/rust-tools.nvim',
+        {'mrcjkb/rustaceanvim', ft = {'rust'},},
 
         -- Autoformatting
         'chiel92/vim-autoformat',
@@ -58,7 +58,7 @@ require("lazy").setup({
         'vim-pandoc/vim-pandoc-syntax',
 
         -- Fuzzy search
-        'junegunn/fzf',
+        {'junegunn/fzf', name = "fzf", dir = "~/.fzf"},
 
         -- Autocompletion plugin
         'hrsh7th/nvim-cmp',
@@ -204,16 +204,3 @@ vim.cmd[[filetype plugin indent on]]
 
 -- Column set at 80
 vim.opt.colorcolumn = "80"
-
--- Rust tools
-local rt = require("rust-tools")
-rt.setup({
-        server = {
-            on_attach = function(_, bufnr)
-                -- Hover actions
-                vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-                -- Code action groups
-                vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-            end,
-        },
-    })
