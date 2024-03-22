@@ -42,7 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode archlinux python systemd common-aliases autojump)
+plugins=(git vi-mode archlinux python systemd common-aliases autojump fzf-zsh-plugin)
 
 # User configuration
 
@@ -125,10 +125,7 @@ if [[ -f $ZSH_HIST_DB ]]; then
 fi
 
 # fzf integration
-ZSH_FZF="$HOME/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
-if [[ -f $ZSH_FZF ]]; then
-    source $ZSH_FZF
-fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # GPG struggles to gather password without this
 export GPG_TTY=$(tty)

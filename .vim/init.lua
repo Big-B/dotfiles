@@ -36,7 +36,7 @@ require("lazy").setup({
         'tpope/vim-fugitive',
 
         -- Rust
-        'rust-lang/rust.vim',
+        {'rust-lang/rust.vim', ft = {'rust'},},
         {'mrcjkb/rustaceanvim', ft = {'rust'},},
 
         -- Autoformatting
