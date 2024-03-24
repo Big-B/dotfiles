@@ -86,6 +86,12 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_numlock enabled
 }
 
+input "12972:18:Framework_Laptop_16_Keyboard_Module_-_ANSI_Keyboard" {
+    xkb_layout us
+    xkb_options caps:swapescape
+    xkb_numlock enabled
+}
+
 ### Key bindings
 #
 # Basics:
