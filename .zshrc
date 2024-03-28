@@ -132,5 +132,6 @@ export GPG_TTY=$(tty)
 
 # If in tty1, start X
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
-    XDG_CURRENT_DESKTOP=sway XKB_DEFAULT_LAYOUT=us exec sway &> ~/.sway.log
+    mkdir -p $XDG_RUNTIME_DIR/sway &> /dev/null
+    XDG_CURRENT_DESKTOP=sway XKB_DEFAULT_LAYOUT=us exec sway &> $XDG_RUNTIME_DIR/sway/sway.log
 fi
