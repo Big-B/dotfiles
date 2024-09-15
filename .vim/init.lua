@@ -39,9 +39,6 @@ require("lazy").setup({
         {'rust-lang/rust.vim', ft = {'rust'},},
         {'mrcjkb/rustaceanvim', ft = {'rust'},},
 
-        -- Autoformatting
-        'chiel92/vim-autoformat',
-
         -- NERDTree
         {'preservim/nerdtree', config = function ()
             vim.api.nvim_exec(
