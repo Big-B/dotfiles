@@ -10,6 +10,7 @@ $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
+$git_state\
 [](fg:color_aqua bg:color_blue)\
 $c\
 $rust\
