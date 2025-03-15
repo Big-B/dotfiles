@@ -28,6 +28,7 @@ readonly CONFIG_FILES="alacritty
     i3
     polybar
     procps
+    starship.toml
     sway
     user-dirs.dirs
     waybar"

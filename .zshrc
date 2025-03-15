@@ -81,6 +81,11 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%})%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%})"
 
+# Starship prompt
+if hash starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
+
 # Stupid oh-my-zsh aliases
 unalias rm cp mv fd &> /dev/null || true
 
