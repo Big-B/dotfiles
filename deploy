@@ -26,6 +26,8 @@ readonly CONFIG_FILES="alacritty
     awesome
     base16-shell
     i3
+    mako
+    niri
     polybar
     procps
     starship.toml
