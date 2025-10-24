@@ -2,6 +2,10 @@
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
+workspace "programming"
+workspace "browser"
+workspace "chat"
+workspace "music"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -260,6 +264,7 @@ spawn-at-startup "swayidle" "-d" "-w" \
 
 spawn-at-startup "clight"
 spawn-at-startup "mako"
+spawn-at-startup "waybar"
 
 // Needed to support x apps like discord
 spawn-at-startup "xwayland-satellite"
