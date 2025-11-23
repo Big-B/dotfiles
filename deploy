@@ -77,6 +77,6 @@ if [ -d "$ZSH_PLUGINS" ]; then
 fi
 
 # Deploy fzf
-ln -sf $PWD/fzf $HOME/.fzf
+ln -sfn $PWD/fzf $HOME/.fzf
 
 ln -sfn $PWD/linuxexecs $HOME/bin
