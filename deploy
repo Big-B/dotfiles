@@ -25,6 +25,7 @@ readonly HOME_FILES=".Xresources
 readonly CONFIG_FILES="alacritty
     awesome
     base16-shell
+    fontconfig
     i3
     mako
     niri
