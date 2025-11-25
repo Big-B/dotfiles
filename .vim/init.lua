@@ -21,7 +21,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-        {"vimwiki/vimwiki", branch = "dev"},
+        {"vimwiki/vimwiki",
+            branch = "dev",
+            init = function()
+                vim.g.vimwiki_list = {
+                    {
+                        path = "~/syncthing/sync/vimwiki/"
+                    },
+                }
+            end
+        },
         "lervag/vimtex",
 
         -- Language Packs
