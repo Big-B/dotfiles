@@ -26,9 +26,12 @@ require("lazy").setup({
             init = function()
                 vim.g.vimwiki_list = {
                     {
-                        path = "~/syncthing/sync/vimwiki/"
+                        path = "~/syncthing/sync/vimwiki/",
+                        syntax = "markdown",
+                        ext = "md"
                     },
                 }
+                vim.g.vimwiki_global_ext = 0
             end
         },
         "lervag/vimtex",
