@@ -44,6 +44,18 @@ require("lazy").setup({
         -- LSP
         "neovim/nvim-lspconfig",
 
+        -- LTeX language server (Plus fork)
+        {
+            "ltex-plus/ltex-ls-plus",
+            ft = { "markdown", "tex", "latex", "vimwiki", "text" },
+        },
+
+        -- Extra utilities for LTeX (dictionaries, ignored words, rules)
+        --{
+        --    "barreiroleo/ltex_extra.nvim",
+        --    ft = { "markdown", "tex", "latex", "vimwiki", "text" },
+        --},
+
         -- Git
         'tpope/vim-fugitive',
 
@@ -94,19 +106,31 @@ require("lazy").setup({
 	              ]],
                 true)
 	          end
-        }
+        },
     })
+
+vim.lsp.enable('ltex_plus', 'rust-analyzer')
+vim.lsp.config('ltex_plus', {
+        ft = { "markdown", "tex", "latex", "vimwiki", "text" },
+        settings = {
+            language = 'en-US',
+        },
+    })
+
+-- Have the diagnostics show up inline instead of in floating windows
+vim.diagnostic.config({ virtual_text = true })
+
+-- require("ltex_extra").setup({
+--     load_langs = { "en-US" }, -- explicitly load en-US
+--     init_check = true,
+--     log_level = "none",
+-- })
 
 -- Remove any trailing whitespace that is in the file
 vim.cmd[[autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif]]
 
 -- This shows what you are typing as a command
 vim.opt.showcmd = true
-
--- Needed for syntax highlighting
-vim.cmd[[filetype off]]
-vim.cmd[[filetype plugin on]]
-vim.cmd[[syntax enable]]
 
 -- Latex
 vim.g.tex_flavor = "latex"
@@ -210,7 +234,10 @@ vim.cmd[[autocmd FileType markdown setlocal spell tw=80]]
 -- Vimwiki
 vim.cmd[[autocmd FileType vimwiki setlocal spell tw=80]]
 
-vim.cmd[[filetype plugin indent on]]
+vim.cmd[[
+    filetype plugin indent on
+    syntax enable
+]]
 
 -- Column set at 80
 vim.opt.colorcolumn = "80"
