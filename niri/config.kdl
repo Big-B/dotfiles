@@ -262,7 +262,8 @@ spawn-at-startup "swayidle" "-d" "-w" \
           "timeout" "3600" "systemctl hibernate" \
           "before-sleep" "swaylock-fancy -p -t ''"
 
-spawn-at-startup "mako"
+// spawn-at-startup "mako"
+spawn-at-startup "swaync"
 spawn-at-startup "waybar"
 
 // Needed to support x apps like discord
@@ -571,6 +572,9 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
+    // Swaync notification panel
+    Mod+Shift+N { spawn "swaync-client" "-t" "-sw"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
